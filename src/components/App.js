@@ -1,16 +1,17 @@
-import React from 'react';
-import Footer from './Footer';
-import AddTodo from './AddTodo';
-import VisibleTodoList from './VisibleTodolist';
+import React, { Component } from 'react';
+import './App.css';
 
-const App = () => (
-    <div>
-        <AddTodo />
-        <VisibleTodoList />
-        <Footer />
-    </div>
-);
+import SampleComponent from './sample-component.jsx';
 
-export default App;
-
-
+export default class App extends Component {
+    render() {
+        return(
+            <div className={'App'}>
+                <div className={'App-header'}>
+                    <h2>Project Mini-Mek</h2>
+                </div>
+                <SampleComponent/>
+            </div>
+        )
+    }
+}
