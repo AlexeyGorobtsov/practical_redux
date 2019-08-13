@@ -6,7 +6,7 @@ import {
 } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.css';
 
-import {TabBarContainer} from "./TabBarContainer.jsx";
+import TabBarContainer from "../containers/TabBarContainer.js";
 import { UnitInfo } from "./UnitInfo.jsx";
 import { Pilots } from "./Pilots.jsx";
 import './App.css';

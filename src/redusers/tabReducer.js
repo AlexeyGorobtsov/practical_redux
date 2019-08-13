@@ -1,6 +1,5 @@
 import {createReducer} from './utils/reducerUtils';
 
-import {TabBarContainer} from "../components/TabBarContainer";
 import {TAB_SELECTED} from "../actions/tabActions";
 
 const initialState = {
