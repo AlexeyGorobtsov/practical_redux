@@ -9,10 +9,9 @@ import 'semantic-ui-css/semantic.css';
 import TabBarContainer from "../containers/TabBarContainer.js";
 import { UnitInfo } from "./UnitInfo.jsx";
 import { Pilots } from "./Pilots.jsx";
+import { Mechs } from "./Mechs.jsx";
+import { UnitOrganization } from "./UnitOrganization.jsx";
 import './App.css';
-
-const Mechs = () => <div>Mechs content</div>;
-const UnitOrganization = () => <div>Unit Organization content</div>;
 
 export default class App extends Component {
     render() {

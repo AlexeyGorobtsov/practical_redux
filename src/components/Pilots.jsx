@@ -84,7 +84,6 @@ export const Pilots = () => {
                             <Form.Field name={'rank'} width={16}>
                                 <label>Rank</label>
                                 <Dropdown
-                                    fuild
                                     selection
                                     options={RANKS}
                                     value={'Colonel'}
@@ -111,7 +110,6 @@ export const Pilots = () => {
                             <Form.Field name={'mech'} width={16}>
                                 <label>Mech</label>
                                 <Dropdown
-                                    fluid
                                     selection
                                     options={MECHS}
                                     value={'WHM-6R'}
