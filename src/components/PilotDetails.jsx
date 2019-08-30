@@ -1,7 +1,7 @@
 import React from 'react';
 import {Form, Dropdown} from "semantic-ui-react";
 
-const RANDS = [
+const RANKS = [
     {value: 'Private', text: 'Private'},
     {value: 'Corporal', text: 'Corporal'},
     {value: 'Sergeant', text: 'Sergeant'},
@@ -15,7 +15,7 @@ const MECHS = [
     {value: 'WHM-6R', text: 'Warhammer WHM-6R'},
 ];
 
-const PilotDetails = ({pilot = {}}) => {
+export const PilotDetails = ({pilot = {}}) => {
     const {
         name = '',
         rank = '',

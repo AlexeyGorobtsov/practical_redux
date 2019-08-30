@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Table} from 'semantic-ui-react';
 
-import {PilotsListHeader } from "./PilotListHeader";
-import {PilotsListRow} from "./PilotsListRow";
+import {PilotsListHeader } from "./PilotListHeader.jsx";
+import {PilotsListRow} from "./PilotsListRow.jsx";
 
 export class PilotsList extends Component {
     render() {

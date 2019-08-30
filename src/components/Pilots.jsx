@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
     Grid,
     Table,
@@ -8,117 +8,44 @@ import {
     Dropdown
 } from 'semantic-ui-react';
 
-const RANKS = [
-    {value: 'Private', text: 'Private'},
-    {value: 'Corporal', text: 'Corporal'},
-    {value: 'Sergeant', text: 'Sergeant'},
-    {value: 'Lieutenant', text: 'Lieutenant'},
-    {value: 'Captain', text: 'Captain'},
-    {value: 'Major', text: 'Major'},
-    {value: 'Colonel', text: 'Colonel'}
+import {PilotsList} from './PilotsList.jsx';
+import {PilotDetails} from "./PilotDetails.jsx";
+
+const pilots = [
+    {
+        name: 'Natasha Kerensky',
+        rank: 'Captain',
+        age: 52,
+        gunnery: 2,
+        piloting: 3,
+        mechType: 'WHM-6R'
+    }
 ];
 
-const MECHS = [
-    {value: 'WHM-6R', text: 'Warhammer WHM-6R'}
-];
+export class Pilots extends Component {
+    state = {
+        pilots: pilots
+    };
 
-export const Pilots = () => {
+    render() {
+        const { pilots } = this.state;
+        const currentPilot = pilots[0] || {};
 
-    return (
-        <Segment>
-            <Grid>
-                <Grid.Column width={10}>
-                    <Header as={'h3'}>Pilot List</Header>
-                    <Table celled>
-                        <Table.Header>
-                            <Table.Row>
-                                <Table.HeaderCell width={5}>
-                                    Name
-                                </Table.HeaderCell>
-                                <Table.HeaderCell widht={3}>
-                                    Rank
-                                </Table.HeaderCell>
-                                <Table.HeaderCell width={2}>
-                                    Age
-                                </Table.HeaderCell>
-                                <Table.HeaderCell width={2}>
-                                    Skills
-                                </Table.HeaderCell>
-                                <Table.HeaderCell width={4}>
-                                    Mech
-                                </Table.HeaderCell>
-                            </Table.Row>
-                        </Table.Header>
-                        <Table.Body>
-                            <Table.Row>
-                                <Table.Cell>
-                                    Natasha Kerensky
-                                </Table.Cell>
-                                <Table.Cell>
-                                    Caption
-                                </Table.Cell>
-                                <Table.Cell>
-                                    52
-                                </Table.Cell>
-                                <Table.Cell>
-                                    2/3
-                                </Table.Cell>
-                                <Table.Cell>
-                                    WHM-6R
-                                </Table.Cell>
-                            </Table.Row>
-                        </Table.Body>
-                    </Table>
-                </Grid.Column>
-                <Grid.Column width={6}>
-                    <Header as={'h3'}>Pilot Details</Header>
-                    <Segment>
-                        <Form size={'large'}>
-                            <Form.Field name={'name'} widht={16}>
-                                <label>name</label>
-                                <input type="text"
-                                       placeholder={'Name'}
-                                       value={'Natasha Kerensky'}
-                                />
-                            </Form.Field>
-                            <Form.Field name={'rank'} width={16}>
-                                <label>Rank</label>
-                                <Dropdown
-                                    selection
-                                    options={RANKS}
-                                    value={'Colonel'}
-                                />
-                            </Form.Field>
-                            <Form.Field name={'age'} width={6}>
-                                <label>Age</label>
-                                <input
-                                    type="text"
-                                    placeholder={'Age'}
-                                    value={52}
-                                />
-                            </Form.Field>
-                            <Form.Field name={'gunnery'} width={6}>
-                                <label>Gunnery</label>
-                                <input value={2}/>
-                            </Form.Field>
-                            <Form.Field name={'piloting'} width={6}>
-                                <label>Piloting</label>
-                                <input
-                                    value={3}
-                                />
-                            </Form.Field>
-                            <Form.Field name={'mech'} width={16}>
-                                <label>Mech</label>
-                                <Dropdown
-                                    selection
-                                    options={MECHS}
-                                    value={'WHM-6R'}
-                                />
-                            </Form.Field>
-                        </Form>
-                    </Segment>
-                </Grid.Column>
-            </Grid>
-        </Segment>
-    )
-};
+        return (
+            <Segment>
+                <Grid>
+                    <Grid.Column width={10}>
+                        <Header as={'h3'}>Pilot List</Header>
+                        <PilotsList pilots={pilots}/>
+                    </Grid.Column>
+                    <Grid.Column width={6}>
+                        <Header as={'h3'}>Pilot Details</Header>
+                        <Segment>
+                            <PilotDetails pilot={currentPilot}/>
+                        </Segment>
+                    </Grid.Column>
+                </Grid>
+            </Segment>
+        )
+    }
+}
