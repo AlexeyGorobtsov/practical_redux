@@ -11,6 +11,7 @@ import { UnitInfo } from "./UnitInfo.jsx";
 import { Pilots } from "./Pilots.jsx";
 import { Mechs } from "./Mechs.jsx";
 import { UnitOrganization } from "./UnitOrganization.jsx";
+import Tools from "../containers/Tools";
 import './App.css';
 
 export default class App extends Component {
@@ -19,7 +20,8 @@ export default class App extends Component {
             {name: 'unitInfo', label: 'Unit Info', component: UnitInfo},
             {name: 'pilots', label: 'Pilots', component: Pilots},
             {name: 'mechs', label: 'Mechs', component: Mechs},
-            {name: 'unitOrganization', label: 'Unit Organization', component: UnitOrganization}
+            {name: 'unitOrganization', label: 'Unit Organization', component: UnitOrganization},
+            {name: 'tools', label: 'Tools', component: Tools}
         ];
 
         return (
