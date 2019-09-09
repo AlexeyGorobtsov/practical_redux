@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'semantic-ui-react';
 
-import {getWeightClass } from './selectors/mechSelectors';
+import {getWeightClass } from '../selectors/mechSelectors';
 
 export const MechDetails = ({mech={}}) => {
     const {

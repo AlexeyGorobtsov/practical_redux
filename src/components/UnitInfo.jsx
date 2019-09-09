@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
     Form,
     Dropdown,
@@ -10,23 +10,28 @@ const FACTIONS = [
     {value: 'wd', text: `Wolf's Dragoons`},
 ];
 
-export const UnitInfo = () => {
-    return (
-        <Segment attached={'bottom'}>
-            <Form size={'large'}>
-                <Form.Field name={'name'} width={6}>
-                    <label>Unit name</label>
-                    <input type="text" placeholder={'Name'} value={'Black Widow Company'}/>
-                </Form.Field>
-                <Form.Field name={'affiliation'} width={6}>
-                    <label>Affiliation</label>
-                    <Dropdown
-                        selection
-                        options={FACTIONS}
-                        value={'wd'}
-                    />
-                </Form.Field>
-            </Form>
-        </Segment>
-    )
-};
+export class UnitInfo extends Component {
+    render() {
+        const {unitInfo} = this.props;
+        console.log(this)
+        const {name, affiliation} = unitInfo;
+        return (
+            <Segment attached={'bottom'}>
+                <Form size={'large'}>
+                    <Form.Field name={'name'} width={6}>
+                        <label>Unit name</label>
+                        <input type="text" placeholder={'Name'} value={name}/>
+                    </Form.Field>
+                    <Form.Field name={'affiliation'} width={6}>
+                        <label>Affiliation</label>
+                        <Dropdown
+                            selection
+                            options={FACTIONS}
+                            value={affiliation}
+                        />
+                    </Form.Field>
+                </Form>
+            </Segment>
+        )
+    }
+}

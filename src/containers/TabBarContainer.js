@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { TabBar } from '../components/TabBar.jsx';
 
-import { selectCurrentTab } from '../components/selectors/tabSelectors.js';
+import { selectCurrentTab } from '../selectors/tabSelectors.js';
 import {selectTab} from '../actions/tabActions';
 
 const mapState = state => {
