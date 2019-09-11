@@ -4,7 +4,7 @@ import "semantic-ui-css/semantic.css";
 
 import TabBarContainer from "../containers/TabBarContainer.js";
 import UnitInfo from "../containers/UnitInfo";
-import { Pilots } from "./Pilots.jsx";
+import  Pilots  from "../containers/Pilots.js";
 import { Mechs } from "./Mechs.jsx";
 import { UnitOrganization } from "./UnitOrganization.jsx";
 import Tools from "../containers/Tools";

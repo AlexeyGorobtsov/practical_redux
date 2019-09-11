@@ -23,12 +23,9 @@ const pilots = [
 ];
 
 export class Pilots extends Component {
-    state = {
-        pilots: pilots
-    };
 
     render() {
-        const { pilots } = this.state;
+        const { pilots = [] } = this.props;
         const currentPilot = pilots[0] || {};
 
         return (
