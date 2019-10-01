@@ -6,6 +6,7 @@ import schema from '../schema/index';
 const initialState = schema.getEmptyState();
 
 export function loadData(state, payload) {
+    //console.log({state})
     const session = schema.session(state);
     const {Pilot, MechDesign, Mech } = session;
     const {pilots, designs, mechs} = payload;

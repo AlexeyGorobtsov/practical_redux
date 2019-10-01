@@ -6,10 +6,14 @@ import {getWeightClass } from '../selectors/mechSelectors';
 export const MechDetails = ({mech={}}) => {
     const {
         id='',
-        name='',
         type='',
-        weight=''
+        mechType={}
     } = mech;
+    const {
+        name = '',
+        weight = '',
+    } = mechType;
+
   const weightClass = getWeightClass(weight);
 
   return (

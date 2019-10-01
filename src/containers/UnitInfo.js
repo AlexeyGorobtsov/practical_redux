@@ -4,7 +4,7 @@ import {UnitInfo} from "../components/UnitInfo.jsx";
 import { selectUnitInfo} from "../selectors/unitInfoSelectors";
 
 const mapState = state => {
-   console.log(state);
+
    return {unitInfo: selectUnitInfo(state)}
 };
 
